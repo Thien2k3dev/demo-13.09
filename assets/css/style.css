@@ -1,0 +1,164 @@
+/* RESET CSS */
+ *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*
+1.từ ngoài vào trong
+2. từ trên xuống dưới 
+3. TỪ TỔNG QUAN ĐẾN CHI TIẾT
+ */
+/* 
+1.vị trí
+2.kích thước   font-size
+3. màu sắc
+4. kiểu dáng( kiểu chữ, hình tròn, vuông,...)
+*/
+
+h1{
+    color: blue;
+     
+}
+
+#main{
+    margin-top: 0;
+
+}
+
+#header{
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    /* cái top này rất quan trọng */
+    top: 0;
+    /* thuộc tính fixed ăn theo màn hình */
+    left: 0;
+    right: 0;
+  
+    /* để dấu search dính sat về bên phải */
+   
+}
+
+#nav {
+   display: inline-block;
+}
+
+#nav, .subnav { 
+    list-style-type: none;
+}
+#nav > li {
+    display: inline-block;
+    
+}
+
+#nav li {
+   position: relative;
+}
+
+#nav > li > a {
+    color: #fff;
+/* chỉ áp dụng cho thẻ con cấp 1 */
+    text-transform: uppercase; /*viết hoa hết lên */
+    /* cấp 2 không bị ảnh hưởng
+    cấp 2 chính là Merchandise, Extras, Media */
+}
+
+#nav li a {
+    
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+    display: inline-block;
+    
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+#nav .subnav li:hover,
+#nav > li:hover > a {
+    color:#000;
+    background-color: #ccc;
+}
+
+#nav li:hover {
+    color: #000;
+    background-color: #ccc;
+
+}
+
+#nav .subnav {
+    display: none; 
+    min-width: 160px;
+    position: absolute;
+    /*  */
+    top: 100%;
+    left: 0; 
+    /* để chắc chắn hiển thị đúng trên nhiều trình duyệt */
+    color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0  , 0, 0, 0.3) ;
+}
+ 
+#nav .subnav a {
+     color: rgb(9, 9, 31);
+     padding: 0 8px;
+     line-height: 38px;
+
+}
+
+#nav .nav-arrow-down {
+    font-size: 12px; 
+    /* mặc định font là 16px */
+}
+
+#header .search-btn {
+    float: right;
+    /* width: 62px; */
+    padding: 0 21px;
+    cursor: pointer;  /* hình bàn tay */
+}
+
+#header .search-icon {
+    color: #fff;
+    font-size: 18px;
+    line-height: 46px;
+    
+}
+
+#header .search-btn:hover {
+    color: #fff;
+    background-color: red;
+}
+
+/* Header */
+
+
+
+
+#slider{
+    /* LÀM THẾ NÀO ĐỂ TÁCH HEADER RA KHỎI SLIDER */
+   /* do thuộc tính position fixed nên phần header nằm đè lên phần slider */
+   /* đây là cách xử lí để hai phần không chồng chéo lên nhau */
+    /* margin-top: 46px;  */
+    padding-top: 50%;
+    /* kĩ thuật background-img, luôn giữ đúng tỉ lệ hình ảnh */
+    background: url('/assets/img/img_la.jpg') top center / cover no-repeat;
+    margin-top: 46px;
+}
+
+#content{
+    height: 1000px;
+    background: #ccc;
+        
+}
+
+#footer{
+
+}
