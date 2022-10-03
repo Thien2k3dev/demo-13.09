@@ -101,7 +101,8 @@
                             <h3 class="place-heading">New York</h3>
                             <p class="place-time">Fri 27 Nov 2016</p>
                             <p class="place-description ">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                            <a href="#" class="place-buy-btn">Buy Tickets</a>                        </div>
+                            <button class="btn js-buy-ticket">Buy Tickets</button>                      
+                        </div>
                     </div>
                     
                     <div class="place-item">
@@ -110,7 +111,8 @@
                             <h3 class="place-heading">Paris</h3>
                             <p class="place-time ">Sat 28 Nov 2016</p>
                             <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                            <a href="#" class="place-buy-btn">Buy Tickets</a>                        </div>
+                            <button class="btn js-buy-ticket">Buy Tickets</button>                      
+                        </div>
                     </div>
 
                     <div class="place-item">
@@ -119,7 +121,8 @@
                             <h3 class="place-heading ">San Francisco</h3>
                             <p class="place-time ">Sun 29 Nov 2016</p>
                             <p class="place-description ">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                            <a href="#" class="place-buy-btn">Buy Tickets</a>                        </div>
+                            <button class="btn js-buy-ticket">Buy Tickets</button>                      
+                        </div>
                         </div>
                     <!-- để background ôm trọn hết phần item -> sử dụng một thẻ div có "clear" -->
                     <div class="clear"></div>
@@ -147,28 +150,25 @@
              </div>
 
              <header class="modal-header">
-                <i class="modal-heading-ticket ti-bag"></i>
+                <i class="modal-heading-icon ti-bag"></i>
                 Tickets
              </header>
 
              <div class="modal-body">
-                <label for="" class="model-lable">
+                <label for="How many?" class="modal-lable">
                     <i class="ti-shopping-cart"></i>
                     Tickets, $15 per person
                 </label>
                 <!-- thẻ label là thẻ tạo ô vuông  -->
 
-                <input type="text" class="modal-input" placeholder="How many?">
-             </div>
-
-
-             <label for="" class="model-lable">
-                <i class="ti-user"></i>
-                Send to
-            </label>
-
-            <input type="email" class="modal-input" placeholder="Enter email...">
-            
+                <input id="How many?" type="text" class="modal-input" placeholder="How many?">
+                
+                <label for="Enter email..." class="modal-lable">
+                   <i class="ti-user"></i>
+                   Send to
+                </label>
+                   <input id="Enter email..." type="email" class="modal-input" placeholder="Enter email...">
+                <!-- for trên thẻ lable chỉ dùng cho id, thẻ này dùng để trỏ vào phần người dùng một nhập để tiện hơn -->
             <button id="buy-tickets">
                 Pay <i class="ti-check"></i>
             </button>
@@ -176,13 +176,19 @@
             <footer class="modal-footer">
                <p class="modal-help">Need <a href="">help?</a></p>
             </footer>
+        
+        </div>
+            
 
-         </div>
+    </div>
 <!-- NÂNG GIÁ TRỊ BẢN THÂN LÊN, VẬT CHẤT QUYẾT ĐỊNH Ý THỨC, NGIU CÓ HAY KHÔNG KHÔNG QUAN TRỌNG -->
 
         </div>
     </div>
 
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+    </script>
 
     
 </body>

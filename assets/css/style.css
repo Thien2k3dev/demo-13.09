@@ -335,7 +335,7 @@ h1{
 
 }
 
-.place-buy-btn {
+.btn {
     color: #fff;
     background-color: #000;
     text-decoration: none;
@@ -345,28 +345,36 @@ h1{
 
 }
 
-.place-buy-btn:hover {
+.btn:hover {
     color: #000;
     background-color: #ccc;
 }
 
 
 .modal {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.4);
-    display: flex;
+    /* display: flex; thuộc tính này giúp khi hiện lên thì bảng modal này nằm ở giữa */
     align-items: center;
     justify-content: center;
+}
+
+.modal.open {
+    display: flex;
 }
 
 .modal-container {
     background: #fff;
     width: 900px;
+    max-width: calc(100% - 32px);
+    /* responsive để khi co nhỏ màn hình vào thì hai bên vẫn để cách một khoảng là 16px */
     min-height: 200px;
+    position: relative;
 }
 
 /* modal buy tickets */
@@ -377,12 +385,72 @@ h1{
     align-items: center;
     /* thằng con nằm giữa chiều cao của thằng cha */
     justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    
 }
-.modal-heading-ticket {
-    margin-left: 16px;
+/* làm chữ tickets cách cái cặp ra một chút */
+.modal .modal-heading-icon {
+    /* margin-left: 16px; */
+    margin-right: 16px;
 }
 
+.modal-container .modal-close {
+    position: absolute;
+    right: 0;
+    color: #fff;
+    padding: 16px;
+    cursor: pointer;
+    /* cursor : pointer :: dấu hình bàn tay khi trỏ vào phần tử */
+    opacity: 0.8; 
+    /* độ mờ */
+}
+.modal-body {
+    padding: 16px;
 
+}
+
+.modal-lable {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 12px;
+    
+}
+
+.modal-input {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+
+}
+
+#buy-tickets {
+    background-color: #009688;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+    cursor: pointer;
+}
+
+#buy-tickets:hover {
+    opacity: 0.9;
+}
+
+.modal-footer {
+    padding: 16px;
+    text-align: right;
+}
+
+.modal-footer a {
+    color: #2196f3;
+    
+}
 
 /* FOOTER */
 #footer{
