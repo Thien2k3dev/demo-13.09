@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  
 }
 html{
     font-family: Arial, Helvetica, sans-serif;
@@ -20,23 +19,65 @@ html{
 4. kiểu dáng( kiểu chữ, hình tròn, vuông,...)
 */
 
-h1{
-    color: blue;
-     
+/* COMMON */
+.clear {
+    clear: both;
 }
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    width: 33.33333%;
+    padding: 0 8px;
+}
+
+.col-third {
+    width: 33.33333%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+
+
+/* MAIN */
 
 #main{
     margin-top: 0;
 
 }
 
-.clear {
-    clear: both;
-}
 
-.text-white {
-    color: #fff !important;
-}
 
 #header{
     height: 46px;
@@ -188,12 +229,13 @@ h1{
 /* CONTENT */
 #content{
     height: 1000px;
-    background: #ccc;
+    background: #fff;
         
 }
 
 
 #content .content-section{
+    /* color: #fff; */
     width: 800px;
     padding: 64px 0;
     margin-left: auto;
@@ -232,17 +274,16 @@ h1{
 
 #content .member-list {
     padding-top: 48px;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* overflow để dòng tours xuống hẳn phía bên dưới */
     
 }
 
 
-#content .member-item {
-    float: left;
+/* #content .member-item {
     text-align: center;
-    width: 33.33333%;
-}
+    
+} */
 
 #content .member-name {
 
@@ -263,6 +304,7 @@ h1{
 
 
 .tour-section {
+    color: #fff;
     background-color: #000;
 }
 
@@ -303,16 +345,15 @@ h1{
 
 /* PLACES */
 .places-list {
-    margin: 32px -8px 48px;
-     
+   
+    margin-top: 32px;
+    margin-bottom: 48px;
+    color: #333;
 }
 
 .place-item {
-    float: left;
     width: 33.33333%;
-    padding: 0 8px;
 }
-
 .place-img {
     width: 100%;
 }
@@ -326,6 +367,9 @@ h1{
     font-size: 15px;
     background: #fff;
 
+}
+.place-time{
+    opacity: 0.6;
 }
 
 .place-heading{
@@ -375,6 +419,7 @@ h1{
     /* responsive để khi co nhỏ màn hình vào thì hai bên vẫn để cách một khoảng là 16px */
     min-height: 200px;
     position: relative;
+    animation: modalFadeIn ease .3s;
 }
 
 /* modal buy tickets */
@@ -450,6 +495,50 @@ h1{
 .modal-footer a {
     color: #2196f3;
     
+}
+@keyframes modalFadeIn {
+    from{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+/* CONTACT */
+.contact-content{
+    margin-left: 46px;
+}
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+/* đặt width cho icon -> cho chữ bằng nhau */
+.contact-info i[class*="ti-"] {
+    width: 30px; /*nếu chưa ăn thì có thể do display = block nên không css được*/
+    display: inline-block;
+}
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.contact-form .form-submit-btn {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* width: 100%; */
+    outline: none;
+    float: right;
+
 }
 
 /* FOOTER */

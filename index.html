@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="main">
+         
         <div id="header">
             <!-- Begin Nav -->
             <ul id="nav">
@@ -59,22 +60,22 @@
                     We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.               
                 </p>
                 <!-- MEMBER LIST   -->
-                <div class="member-list">
-                    <div class="member-item">
-                        <p class="member-name">Name</p>
+                <div class="row member-list">
+                    <div class="col col-third text-center">
+                        <p class="member-name">CODE</p>
                         <img src="./assets/img/bandmember.jpg" alt="member1" class="member-img">
                      </div>
 
-                     <div class="member-item">
-                        <p class="member-name">Name</p>
+                     <div class="col col-third text-center">
+                        <p class="member-name">BY</p>
                         <img src="./assets/img/bandmember.jpg" alt="member2" class="member-img">
                      </div>
 
-                     <div class="member-item">
-                        <p class="member-name">Name</p>
+                     <div class="col col-third text-center">
+                        <p class="member-name">ThH</p>
                         <img src="./assets/img/bandmember.jpg" alt="member3" class="member-img">
                      </div>
-                     <div class="clear"></div>
+                     
                     
                 </div>
              </div>
@@ -94,8 +95,8 @@
                  
                   
                  <!-- PLACES -->
-                 <div class="places-list">
-                    <div class="place-item">
+                 <div class="row places-list">
+                    <div class="col col-third">
                         <img src="./assets/img/newyork.jpg" alt="New York" class="place-img">
                         <div class="place-body">
                             <h3 class="place-heading">New York</h3>
@@ -105,7 +106,7 @@
                         </div>
                     </div>
                     
-                    <div class="place-item">
+                    <div class="col col-third">
                         <img src="./assets/img/paris.jpg" alt="Paris" class="place-img">
                         <div class="place-body">
                             <h3 class="place-heading">Paris</h3>
@@ -115,7 +116,7 @@
                         </div>
                     </div>
 
-                    <div class="place-item">
+                    <div class="col col-third">
                         <img src="./assets/img/sanfran.jpg" alt="San Francisco" class="place-img">
                         <div class="place-body">
                             <h3 class="place-heading ">San Francisco</h3>
@@ -125,7 +126,7 @@
                         </div>
                         </div>
                     <!-- để background ôm trọn hết phần item -> sử dụng một thẻ div có "clear" -->
-                    <div class="clear"></div>
+                   
                  </div>
             </div>
 
@@ -135,17 +136,52 @@
             <div class="content-section">
                 <h2 class="section-heading">CONTACT</h2>
                 <p class="section-sub-heading">Fan? Drop a note!</p>
-               
+
+                <div class="row contact-content">
+
+                    <div class="col col-half contact-info">
+                        <p> <i class="ti-location-pin"></i>
+                            Thanh Xuân, Hà Nội, VN</p>
+                        <p> <i class="ti-mobile"></i>
+                            Phone: +84 3****1200</p>
+                        <p> <i class="ti-email"></i>
+                            Email: thien2k3dev@gmail.com</p>
+                    </div>
+    
+                    <div class="col col-half contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half">
+                                    <input type="text" name="" placeholder="Name" required  id="" class="form-control">
+                                </div>
+                                <div class="col col-half">
+                                    <input type="email" name="" placeholder="Email" required id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-8">
+                                <div class="col col-full">
+                                    <input type="message" name="" placeholder="Message" required id="" class="form-control">
+                                </div>
+                                <!-- required: buộc phải điền thông tin trước khi send -->
+                            </div>
+                            <input class="form-submit-btn mt-16" type="submit" value="SEND">
+                        </form>
+                    </div>
+                </div>
+                
             </div>
+
+
+
             <!-- ABOUT FOOTER -->
         <div id="footer">
 
         </div>
     </div>
 
-    <div class="modal">
-        <div class="modal-container">
-             <div class="modal-close">
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+             <div class="modal-close js-modal-close">
                 <i class="ti-close"></i>
              </div>
 
@@ -188,6 +224,34 @@
 
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        // f12 -> console -> gõ buyBtns vào -> Enter xem nút đã được hiện lên trong thẻ js hay chưa
+        const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
+        const modalClose = document.querySelector('.js-modal-close')
+        // lấy ra 1 nút nên sẽ là querySelector
+
+        function showBuyTickets () {
+            modal.classList.add('open')
+        }
+         function hideBuyTickets () {
+            modal.classList.remove('open') 
+        }
+
+        // hai chức năng mở vào đóng này có sự liên kết với nhau, 
+        // thực hiện trên cùng một phần
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTickets )
+        } //lặp qua từng thẻ button và lắng nghe click
+
+        modalClose.addEventListener('click', hideBuyTickets)  
+
+        modal.addEventListener('click', hideBuyTickets)
+        // ấn vào khoảng không để tắt bảng BuyTickets
+
+        modalContainer.addEventListener('click', function(event) {
+            event.stopPropagation()
+        })
     </script>
 
     
