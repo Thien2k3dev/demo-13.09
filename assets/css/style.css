@@ -207,10 +207,6 @@ html{
 
 #slider{
     position: relative;
-    /* LÀM THẾ NÀO ĐỂ TÁCH HEADER RA KHỎI SLIDER */
-   /* do thuộc tính position fixed nên phần header nằm đè lên phần slider */
-   /* đây là cách xử lí để hai phần không chồng chéo lên nhau */
-    /* margin-top: 46px;  */
     padding-top: 50%;
     /* kĩ thuật background-img, luôn giữ đúng tỉ lệ hình ảnh */
     background: url('/assets/img/img_la.jpg') top center / cover no-repeat;
@@ -559,10 +555,9 @@ html{
 .map-section img {
     width: 100%;
 }
+/*  */
 
-
-
-/* FOOTER SECTION */
+/* BEGIN : FOOTER SECTION */
 #footer{
     padding: 64px 16px;
     text-align: center;
@@ -589,3 +584,5 @@ html{
     color: rgba(0  , 0, 0, 0.6);
 
 }
+/* END : FOOTER SECTION */
+
