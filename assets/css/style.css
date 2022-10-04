@@ -34,6 +34,20 @@ html{
     clear: both;
 }
 
+.btn {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+}
+
+.pull-right {
+    float: right !important;
+}
+
 .col {
     float: left;
     width: 33.33333%;
@@ -237,7 +251,7 @@ html{
 #content .content-section{
     /* color: #fff; */
     width: 800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -347,7 +361,6 @@ html{
 .places-list {
    
     margin-top: 32px;
-    margin-bottom: 48px;
     color: #333;
 }
 
@@ -386,7 +399,7 @@ html{
     padding: 11px 16px;
     display: inline-block;
     margin-top: 15px;
-
+    border: none;
 }
 
 .btn:hover {
@@ -541,7 +554,38 @@ html{
 
 }
 
-/* FOOTER */
+
+/* MAP SECTION */
+.map-section img {
+    width: 100%;
+}
+
+
+
+/* FOOTER SECTION */
 #footer{
+    padding: 64px 16px;
+    text-align: center;
+    color: #000;
+
+}
+.social-list{
+    font-size: 24px;
+    
+}
+
+.social-list a {
+    color: rgba(0  , 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.copyright a:hover,
+.social-list a:hover {
+    
+    color: rgba(0  , 0, 0, 0.4);
+}
+.copyright {
+    margin-top: 15px;
+    color: rgba(0  , 0, 0, 0.6);
 
 }
